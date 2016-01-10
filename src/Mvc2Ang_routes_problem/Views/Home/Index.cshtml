@@ -1,0 +1,41 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>Home</title>
+
+	<link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
+	<link rel="stylesheet" href="~/css/site.css" />
+</head>
+<body ng-app="myApp">
+
+	<div ng-controller="IndexController as main">
+		<div class="container">
+			<h1>Home page</h1>
+			<a href="~/" class="btn btn-default">Home</a>
+			<a href="~/games" class="btn btn-default">Go to games</a>
+			<a href="~/games/2" class="btn btn-default">Go to game #2</a>
+		</div>
+
+		<div ng-view class="container"></div>
+
+		<pre>2 + 2 = {{2+2}}</pre>
+		<pre>$location.path() = {{main.$location.path()}}</pre>
+		<pre>$route.current.templateUrl = {{main.$route.current.templateUrl}}</pre>
+		<pre>$route.current.params = {{main.$route.current.params}}</pre>
+		<pre>$routeParams = {{main.$routeParams}}</pre>
+	</div>
+
+	<script src="~/lib/jquery/dist/jquery.js"></script>
+	<script src="~/lib/angular/angular.js"></script>
+	<script src="~/lib/angular-route/angular-route.js"></script>
+	<script src="~/lib/bootstrap/dist/js/bootstrap.js"></script>
+	<script src="~/js/site.js"></script>
+
+	<script type="text/javascript">
+		angular.element(document.getElementsByTagName('head')).append(angular.element('<base href="' + window.location.pathname + '" />'));
+	</script>
+</body>
+</html>
+
