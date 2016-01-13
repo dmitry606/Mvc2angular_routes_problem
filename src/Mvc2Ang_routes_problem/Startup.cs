@@ -24,12 +24,7 @@ namespace Mvc2Ang_routes_problem
 
 			app.UseMvc(routes =>
 			{
-				routes.MapRoute(
-					name: "default",
-					template: "{controller=Home}/{action=Index}");
-
-				routes.MapRoute("gamelist", "games", new { controller = "Home", action = "Index"});
-				routes.MapRoute("gameWithId", "games/2", new { controller = "Home", action = "Index" });
+				routes.MapRoute("default", "{*anything}", new { controller = "Home", action = "Index"});
 			});
 
 			app.Run(async (context) =>

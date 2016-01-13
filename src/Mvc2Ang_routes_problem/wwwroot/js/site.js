@@ -19,7 +19,7 @@ myApp.config(['$routeProvider', '$locationProvider',
 				controllerAs: 'ctrl'
 			});
 
-		$locationProvider.html5Mode(true);
+		//$locationProvider.html5Mode(true);
 	}]);
 
 
